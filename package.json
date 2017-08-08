@@ -1,0 +1,55 @@
+{
+  "name": "ecommerce-automation",
+  "version": "1.0.0",
+  "description": "UI tests javascirpt FW",
+  "bin": {
+    "chimp": "node_modules/.bin/chimp/chimp.js",
+    "gulp": "node_modules/.bin/gulp/gulp.js"
+  },
+  "keywords": [
+    "chimp",
+    "e2e",
+    "webdriverio",
+    "selenium",
+    "cucumber"
+  ],
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "enumify": "^1.0.4",
+    "fibers": "^2.0.0",
+    "gulp-chimp": "^2.2.1",
+    "gulp-util": "^3.0.8"
+  },
+  "dependencies": {
+    "chai": "^4.1.1",
+    "chimp": "^0.49.1",
+    "gulp": "^3.9.1"
+  },
+  "scripts": {
+    "build_": "babel node_modules/chimp/bin/chimp.js -o compiled.js",
+    "start": "gulp start",
+    "e2e": "gulp chimp",
+    "build": "babel server -d dist",
+    "dev": "concurrently -p none 'nodemon server/index.js --exec babel-node' 'npm run test:watch'",
+    "test:chrome2": "node_modules/chimp/bin/chimp.js --chai --strict",
+    "test:chrome": "node_modules/chimp/bin/chimp.js --chai --strict",
+    "test:headless": "node_modules/chimp/bin/chimp.js --compiler=js:babel-register --browser=phantomjs",
+    "test:watch": "node_modules/chimp/bin/chimp.js --strict  --watch",
+    "test:debug": "node_modules/chimp/bin/chimp.js  --inspect --inspect-brk",
+    "test:loop": "for i in {1..40}; do echo Run Number $i;  node_modules/chimp/bin/chimp.js --tags ~@wip --fail-fast; done;"
+  },
+  "presets": [
+    "es2015"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Twistbioscience/ecommerce-automation.git"
+  },
+  "author": "Ido Levi <ilevi@twistbioscience.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Twistbioscience/ecommerce-automation/issues"
+  },
+  "homepage": "https://github.com/Twistbioscience/ecommerce-automation#readme"
+}
