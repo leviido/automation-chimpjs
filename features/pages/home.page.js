@@ -103,7 +103,7 @@ const expect = require('chai').expect;
         try {
             browser.waitUntil(function () {
                 return browser.isExisting('.app-loading-component-container') === false
-            }, 8 * 1000, 'expected spinner to be gone after 8s');
+            }, 15 * 1000, 'expected spinner to be gone after 15s');
             this.continue_btn.click()
         } catch (err) {
             console.log(err);

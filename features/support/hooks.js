@@ -4,7 +4,7 @@ module.exports = function () {
     });
 
     this.After(function(scenario) {
-        console.log('---------- End Scenario [' + scenario.getName().toUpperCase() + '] ----------');
+       // console.log('---------- End Scenario [' + scenario.getName().toUpperCase() + '] ----------');
     });
 
     /* ---- custom command ---- */

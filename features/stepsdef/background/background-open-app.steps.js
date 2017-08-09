@@ -17,9 +17,12 @@ module.exports = function() {
      */
     this.Given(/^I have opened e-commerce$/, function () {
         var currentUrl = browser.getUrl();
-       // var baseUrl = Paths.baseUrl;
 
         var profile = process.env.profile;
+        if (typeof profile == 'undefined') {
+            profile = "DEFAULT";
+        }
+
         let baseUrl = Sut.Profile[profile.toUpperCase()]
 
         /** if app is opened and url=requested_url no need do anything **/

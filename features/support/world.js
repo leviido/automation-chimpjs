@@ -4,20 +4,13 @@
     value: true
 });*/
 
-//exports = module.exports = {};
-/*export const Profile = {
-    LOCAL: 'http://localhost:8080',
-    DEV : 'https://ecommerce.twistbioscience-dev.com',
-    QA : 'https://ecommerce.twistbioscience-qa.com',
-    STAGING : 'https://ecommerce.twistbioscience-staging.com/',
-}*/
-
 export const Sut = {
     Profile: {
         LOCAL: 'http://localhost:8080',
         DEV : 'https://ecommerce.twistbioscience-dev.com',
         QA : 'https://ecommerce.twistbioscience-qa.com',
         STAGING : 'https://ecommerce.twistbioscience-staging.com/',
+        DEFAULT : 'https://ecommerce.twistbioscience-dev.com',
     },
     Users:  {
         default_user: "ilevi@twistbioscience.com",
