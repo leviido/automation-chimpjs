@@ -2,6 +2,9 @@
 
 import {Page} from './page'
 import * as World from '../support/world.js'
+const expect = require('chai').expect;
+
+
 
  class HomePage extends Page {
     constructor() {
@@ -89,7 +92,7 @@ import * as World from '../support/world.js'
             var actual_project_name = this.project_name_label.getText();
             var expected_project_name = project_name.toString();
             try {
-                expect(actual_project_name).toBe(expected_project_name);
+                expect(actual_project_name).to.equal(expected_project_name);
             } catch (err) {
                 throw ("Home.page::create_new_project() - the project has a different name than expected.\n" +
                 "Expected " + expected_project_name + ", but got " + actual_project_name);

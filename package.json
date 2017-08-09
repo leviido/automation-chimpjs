@@ -8,10 +8,10 @@
   },
   "keywords": [
     "chimp",
-    "e2e",
     "webdriverio",
     "selenium",
-    "cucumber"
+    "cucumber",
+    "twist"
   ],
   "devDependencies": {
     "babel-cli": "^6.24.1",
@@ -26,13 +26,18 @@
     "chimp": "^0.49.1",
     "gulp": "^3.9.1"
   },
+  "config" : { "profile" : "dev" },
   "scripts": {
     "build_": "babel node_modules/chimp/bin/chimp.js -o compiled.js",
     "start": "gulp start",
     "e2e": "gulp chimp",
     "build": "babel server -d dist",
     "dev": "concurrently -p none 'nodemon server/index.js --exec babel-node' 'npm run test:watch'",
-    "test:chrome2": "node_modules/chimp/bin/chimp.js --chai --strict",
+    "test:chrome2": "profile=$npm_package_config_profile node_modules/chimp/bin/chimp.js --chai --strict",
+    "test:qa": "profile=qa node_modules/chimp/bin/chimp.js --chai --strict",
+    "test:dev": "profile=dev node_modules/chimp/bin/chimp.js --chai --strict",
+    "test:staging": "profile=staging node_modules/chimp/bin/chimp.js --chai --strict",
+    "test:local": "profile=local node_modules/chimp/bin/chimp.js --chai --strict",
     "test:chrome": "node_modules/chimp/bin/chimp.js --chai --strict",
     "test:headless": "node_modules/chimp/bin/chimp.js --compiler=js:babel-register --browser=phantomjs",
     "test:watch": "node_modules/chimp/bin/chimp.js --strict  --watch",

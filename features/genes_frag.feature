@@ -11,7 +11,7 @@ Scenario: order 20 genes in plate 96
  When I create new "GENES_FRAG" project
  And  upload file "genes_20_standards.xlsx"
  Then I should get total pricing of "$1,786.05"
- And I should be able to ask for a quote
+ #And I should be able to ask for a quote
 
  Scenario: order 20 genes in tube. Tube should add $50 to the total price
   When I create new "GENES_FRAG" project with the name "auto_test"
@@ -19,7 +19,7 @@ Scenario: order 20 genes in plate 96
   Then I should get total pricing of "$1,786.05"
   And I select tube as the delivery format
   And I should get total pricing of "$1,836.05"
-  And I should be able to ask for a quote
+  #And I should be able to ask for a quote
 
 
  @wip

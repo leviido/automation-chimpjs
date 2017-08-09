@@ -9,7 +9,6 @@ class LoginPage extends Page {
     constructor() {
         super();
         if(!LoginPage.instance){
-            console.log("######## Creating NEW INSTANCE of LoginPage class")
             LoginPage.instance = this;
         }
 
@@ -22,7 +21,7 @@ class LoginPage extends Page {
 
     /* navigate to the login page */
     navigate() {
-      // nothing to now
+      // nothing to do here nnow
     }
 
     login(user, password) {
@@ -38,8 +37,7 @@ class LoginPage extends Page {
                     return HomePage.isLoggedIn() === true
                 }, default_login_timeout , 'Expected login to be completed by up to ' + default_login_timeout + "ms");
             } else {
-                //  nothing to do.
-               // console.log("User is already logged in...");
+                //  nothing to do. console.log("User is already logged in...");
             }
         } catch (err) {
             throw ("Login.page::login() - failed to login!\n\r" + err);

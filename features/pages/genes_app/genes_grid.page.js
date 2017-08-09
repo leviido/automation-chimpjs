@@ -2,6 +2,7 @@
 "use strict";
 
 import {Page} from '../page'
+var expect = require('chai').expect;
 
 
 const default_timeout = 60 * 1000;
@@ -36,6 +37,10 @@ class GenesGridPage extends Page {
         }
     }
 
+    /**
+     * Clicks a gene on the grid by its name
+     * @param gene_name
+     */
     click_a_gene(gene_name) {
         var pattern = /GENE_NAME/ig;
         this.sequence_cell.replace(pattern, gene_name);
@@ -62,7 +67,7 @@ class GenesGridPage extends Page {
             var actual_price = undefined;
             try {
                 actual_price = this.the_total_price.getText();
-                expect(actual_price).toBe(expected_price);
+                expect(actual_price).to.equal(expected_price);
             } catch (err) {
                 throw ("genes_drid.page::wait_for_total_price(expected_price) - the total price is different than expected.\n" +
                 "Expected " + expected_price + ", but got " + actual_price);

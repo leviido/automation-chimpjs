@@ -1,7 +1,6 @@
 module.exports = function () {
     this.Before(function(scenario) {
-        console.log('---------- Starting Scenario [' + scenario.getName().toUpperCase() + '] ----------');
-        console.log("profile=" + process.env['chimp.profile'] + " | " + process.env.profile + " | " + process.argv[10]);
+      //  console.log('---------- Starting Scenario [' + scenario.getName().toUpperCase() + '] ----------');
     });
 
     this.After(function(scenario) {

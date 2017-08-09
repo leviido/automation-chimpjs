@@ -11,7 +11,7 @@ Feature: order oligos pools
     When I create new "OLIGO_POOLS" project
     And  upload file "oligo_5K_max.csv"
     Then I should get total pricing
-    And I should be able to ask for a quote
+    #And I should be able to ask for a quote
 
 
 

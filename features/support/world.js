@@ -1,29 +1,29 @@
 'use strict';
-//import {Enum} from 'enumify';
 
 /*Object.defineProperty(exports, "__esModule", {
     value: true
 });*/
 
 //exports = module.exports = {};
-const profile = {
-    LOCAL: 'http://localhost',
-    DEV : 'https://ecommerce.twistbioscience-dev',
-    QA : 'https://ecommerce.twistbioscience-qa',
-    STAGING : 'https://ecommerce.twistbioscience-staging',
-}
+/*export const Profile = {
+    LOCAL: 'http://localhost:8080',
+    DEV : 'https://ecommerce.twistbioscience-dev.com',
+    QA : 'https://ecommerce.twistbioscience-qa.com',
+    STAGING : 'https://ecommerce.twistbioscience-staging.com/',
+}*/
 
 export const Sut = {
-    default_user : "ilevi@twistbioscience.com",
-    test_user : "test-user1-tlv@twistbioscience.com",
-    admin_user : "test-admin1-tlv@twistbioscience.com",
-    default_password : "Password1",
-
-     sut : {
-        protocol : "https",
-        host : "ecommerce.twistbioscience",
-        port : "80",
-        stack : "",
+    Profile: {
+        LOCAL: 'http://localhost:8080',
+        DEV : 'https://ecommerce.twistbioscience-dev.com',
+        QA : 'https://ecommerce.twistbioscience-qa.com',
+        STAGING : 'https://ecommerce.twistbioscience-staging.com/',
+    },
+    Users:  {
+        default_user: "ilevi@twistbioscience.com",
+        test_user: "test-user1-tlv@twistbioscience.com",
+        admin_user: "test-admin1-tlv@twistbioscience.com",
+        default_password: "Password1",
     }
 }
 
@@ -33,8 +33,6 @@ export const appType = {
 }
 
 export const Paths  = {
-    baseUrl : "https://ecommerce.twistbioscience-qa" +
-    ".com",
     test_data : "test_data/"
 }
 
@@ -48,14 +46,6 @@ export function get_test_file_fullpath(file) {
     return __dirname + "/../" + this.Paths.test_data + file;
 }
 
-/*export function get_base_url() {
-    return this.sut.protocol  + "://" +
-            this.sut.host + "-" +
-            this.stack + +".com" + ":" +
-            this.sut.port + "/app";
-}*/
-
-
 
 /*var host = process.env.HOST || "localhost";
 var port = process.env.PORT || "80";
@@ -67,17 +57,6 @@ var stack = process.env.PLATFORM || "QA";*/
     withCapabilities(webdriver.Capabilities.firefox()).
     build();
 };*/
-/*
-switch(stack) {
-    case 'LOCAL':
-     //   var driver = buildAndroidDriver();
-        break;
-    case 'DEV':
-     //   var driver = buildFirefoxDriver();
-        break;
-    default:
-     //   var driver = buildChromeDriver();
-}*/
 
 /*var getDriver = function() {
     return driver;

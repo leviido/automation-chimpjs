@@ -1,10 +1,6 @@
-
 "use strict";
 
 import {Page} from '../page'
-//var expect = require('chai').expect;
-import { expect } from 'chai';
-
 
 const default_timeout = 60 * 1000;
 
