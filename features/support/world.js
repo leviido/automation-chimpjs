@@ -10,10 +10,10 @@ export const Sut = {
         DEV : 'https://ecommerce.twistbioscience-dev.com',
         QA : 'https://ecommerce.twistbioscience-qa.com',
         STAGING : 'https://ecommerce.twistbioscience-staging.com/',
-        DEFAULT : 'https://ecommerce.twistbioscience-dev.com',
+        DEFAULT : 'https://ecommerce.twistbioscience-staging.com',
     },
     Users:  {
-        default_user: "ilevi@twistbioscience.com",
+        default_user: "test-user1-tlv@twistbioscience.com",
         test_user: "test-user1-tlv@twistbioscience.com",
         admin_user: "test-admin1-tlv@twistbioscience.com",
         default_password: "Password1",

@@ -15,9 +15,9 @@ class LoginPage extends Page {
         return LoginPage.instance
     }
 
-    get username()  { return browser.element('#user_email'); }
-    get password()  { return browser.element('#user_password'); }
-    get login_btn() { return browser.element('.primary-button'); }
+    get username()  {  return browser.element('#user_email'); }
+    get password()  {  return browser.element('#user_password'); }
+    get login_btn() {  return browser.element('.primary-button'); }
 
     /* navigate to the login page */
     navigate() {

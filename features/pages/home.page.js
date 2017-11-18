@@ -2,7 +2,7 @@
 
 import {Page} from './page'
 import * as World from '../support/world.js'
-const expect = require('chai').expect;
+var chai = require('chai').expect;
 
 
 
@@ -103,11 +103,12 @@ const expect = require('chai').expect;
         try {
             browser.waitUntil(function () {
                 return browser.isExisting('.app-loading-component-container') === false
-            }, 15 * 1000, 'expected spinner to be gone after 15s');
+            }, 15 * 1000, 'expected the spinner to be gone after 15s');
             this.continue_btn.click()
         } catch (err) {
             console.log(err);
-            // try once more after sleeping of 2sec
+
+            /** try once more after sleeping of 2sec **/
             browser.pause(2000);
             this.continue_btn.click();
         }

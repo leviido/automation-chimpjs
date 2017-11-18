@@ -58,7 +58,7 @@ class GenesGridPage extends Page {
         try {
             this.total_price_section.waitForExist(timeout);
         } catch (err) {
-            throw ("genes_drid.page::wait_for_total_price() - total price still not shown after " + timeout + "ms");
+            throw ("genes_grid.page::wait_for_total_price() - total price still not shown after " + timeout + "ms");
         }
 
         if (typeof expected_price !== "undefined") {
@@ -76,15 +76,18 @@ class GenesGridPage extends Page {
     }
 
     /**
-     * Waits aand clicks the quote button
+     * Waits and clicks the quote button
      * @param timeout
      */
     ask_for_a_quote(timeout) {
         try {
             // assure that the 'Ask a Quote" button is enable
+            this.quote_btn.waitForExist(timeout);
             this.quote_btn.waitForEnabled(timeout);
-
+            browser.pause(2000);
+            console.log("before click on ask for a quote")
             this.quote_btn.click();
+            console.log("after click on ask for a quote")
             this.quote_confirm_dlg.waitForEnabled(10 * 1000);
             this.quote_confirm_ok_btn.click();
         } catch (err) {

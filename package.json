@@ -19,14 +19,14 @@
     "enumify": "^1.0.4",
     "fibers": "^2.0.0",
     "gulp-chimp": "^2.2.1",
-    "gulp-util": "^3.0.8"
+    "gulp-util": "^3.0.8",
+    "chai": "^4.1.1"
   },
   "dependencies": {
-    "chai": "^4.1.1",
     "chimp": "^0.49.1",
     "gulp": "^3.9.1"
   },
-  "config" : { "profile" : "dev" },
+  "config" : { "profile" : "staging" },
   "scripts": {
     "build_": "babel node_modules/chimp/bin/chimp.js -o compiled.js",
     "start": "gulp start",
@@ -42,7 +42,7 @@
     "test:headless": "node_modules/chimp/bin/chimp.js --compiler=js:babel-register --browser=phantomjs",
     "test:watch": "node_modules/chimp/bin/chimp.js --strict  --watch",
     "test:debug": "node_modules/chimp/bin/chimp.js  --inspect --inspect-brk",
-    "test:loop": "for i in {1..40}; do echo Run Number $i;  node_modules/chimp/bin/chimp.js --tags ~@wip --fail-fast; done;"
+    "test:loop": "for i in {1..50}; do echo Run Number $i;  node_modules/chimp/bin/chimp.js --tags ~@wip --fail-fast; done;"
   },
   "presets": [
     "es2015"
